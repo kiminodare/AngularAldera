@@ -1,0 +1,53 @@
+<app-sidebar>
+    <ng-container content>
+
+        <div class="imageProfile">
+            <img src="assets/profile.png" alt="profile">
+        </div>
+        <mat-card class="example-card">
+            <mat-card-content>
+                <h2 class="name">Information</h2>
+
+                <hr>
+                <div class="containerDetailGroup">
+                    <div class="detailGroup">
+                        <div class="detailGroupTitle">First Name</div>
+                        <div class="detailGroupValue">{{employeeData.firstName}}</div>
+                    </div>
+                    <div class="detailGroup">
+                        <div class="detailGroupTitle">Last Name</div>
+                        <div class="detailGroupValue">{{employeeData.lastName}}</div>
+                    </div>
+                    <div class="detailGroup">
+                        <div class="detailGroupTitle">Email</div>
+                        <div class="detailGroupValue">{{employeeData.email}}</div>
+                    </div>
+                    <div class="detailGroup">
+                        <div class="detailGroupTitle">Birth Date</div>
+                        <div class="detailGroupValue">{{employeeData.birthDate | date:'mediumDate'}}</div>
+                    </div>
+                    <div class="detailGroup">
+                        <div class="detailGroupTitle">Basic Salary</div>
+                        <div class="detailGroupValue">{{employeeData.basicSalary | currency:'IDR':'symbol-narrow'}}</div>
+                    </div>
+                    <div class="detailGroup">
+                        <div class="detailGroupTitle">Status</div>
+                        <div class="detailGroupValue">{{employeeData.status}}</div>
+                    </div>
+                    <div class="detailGroup">
+                        <div class="detailGroupTitle">Group</div>
+                        <div class="detailGroupValue">{{employeeData.group}}</div>
+                    </div>
+                    <div class="detailGroup">
+                        <div class="detailGroupTitle">Description</div>
+                        <div class="detailGroupValue">{{employeeData.description | date:'mediumDate'}}</div>
+                    </div>
+                </div>
+                <hr>
+                <div class="containerButtonForm">
+                    <button mat-raised-button color="primary"(click)="backToEmployee()" >OK</button>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </ng-container>
+</app-sidebar>

@@ -1,0 +1,165 @@
+.example-container {
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+}
+
+.example-header {
+  min-height: 64px;
+  padding: 8px 24px 0;
+}
+
+.container-filter{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 24px 0;
+}
+
+.right {
+  text-align: right;
+  width: auto;
+  button {
+    background-color: #050505;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0px 10px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container-filter {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px 0;
+  }
+
+  .right {
+    text-align: left;
+    width: 100%;
+    margin-top: 10px; /* Atur jarak antara elemen */
+  }
+
+  .right button {
+    width: 100%; /* Buat tombol memenuhi lebar */
+  }
+
+  mat-header-cell,
+  mat-cell {
+    font-size: 14px; /* Atur ukuran teks sel di dalam tabel */
+  }
+
+  .mat-header-cell {
+    display: none; /* Sembunyikan header tabel di tampilan mobile jika diperlukan */
+  }
+
+  .mat-row {
+    display: block; /* Tampilkan baris sebagai blok agar dapat di-scroll di tampilan mobile */
+    margin-bottom: 10px; /* Atur jarak antara baris */
+  }
+
+  .mat-cell::before {
+    content: attr(data-label); /* Tambahkan label untuk setiap sel */
+    font-weight: bold; /* Atur teks label menjadi tebal */
+  }
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.mat-table {
+  overflow: auto;
+  max-height: 500px;
+}
+
+/* CSS untuk <mat-card> */
+mat-card.loading-overlay {
+  pointer-events: none; /* Mat-Card tidak dapat di sentuh */
+}
+
+/* Set ulang pointer-events ke auto untuk elemen anak dalam <mat-card> */
+mat-card.loading-overlay * {
+  pointer-events: auto;
+}
+
+.blur-background {
+  background-color: rgba(255, 255, 255, 0.5);
+  filter: blur(8px); /* Ganti angka ini untuk mengatur tingkat blur yang diinginkan */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Lapisan ini berada di bawah elemen lain */
+}
+
+/* CSS untuk progress bar */
+mat-progress-bar {
+  height: 2px; /* Sesuaikan dengan tinggi yang diinginkan */
+  background-color: transparent;
+}
+
+.sort-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+  transform-origin: center;
+  transition: transform 0.2s ease;
+}
+
+/* Tombol sort akan muncul saat dihover */
+.sort-button.asc:hover::after {
+  content: " ↑";
+  transform: translateY(-100%);
+}
+
+/* Panah bawah (↓) saat tombol dihover */
+.sort-button.desc:hover::after {
+  content: " ↓";
+}
+
+/* Setel transform kembali ke awal saat tidak dihover */
+.sort-button:not(:hover)::after {
+  content: "";
+  transform: translateY(0);
+}
+
+mat-menu {
+  width: auto;
+  height: auto;
+}
+
+.editButton {
+  background-color: #efe358;
+  color: #000000;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  span {
+    margin-right: 10px;
+  }
+}
+
+.editButton:hover {
+  background-color: #f1eaa7;
+}
+
+.deleteButton {
+  background-color: #e74c3c;
+  color: #000000;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}

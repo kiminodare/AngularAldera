@@ -1,0 +1,30 @@
+.example-card {
+  margin: 10px 10px;
+}
+
+.containerDetailGroup {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Dua kolom per baris */
+  grid-gap: 40px; /* Jarak antara elemen-elemen dalam tumpukan */
+  hr {
+    border: none; /* Menghapus garis bawaan */
+    border-top: 2px solid #8a8a8a; /* Atur warna, ketebalan, dan gaya sesuai kebutuhan */
+    width: 50%; /* Atur lebar garis sesuai kebutuhan */
+  }
+}
+
+.imageProfile {
+  display: flex;
+  justify-content: center;
+  img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+  }
+}
+
+.containerButtonForm {
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-end;
+}

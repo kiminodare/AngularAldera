@@ -1,0 +1,112 @@
+<app-sidebar>
+    <ng-container content>
+        <mat-card>
+            <mat-card-content>
+                <form class="example-form" [formGroup]="formControl">
+                    <div class="containerInputForm">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Username</mat-label>
+                            <input type="text" matInput formControlName="userName"
+                                   placeholder="Ex. aldera8989">
+                            <mat-error *ngIf="submmited && formControl.get('userName').hasError('required')">
+                                Username is <strong>required</strong>
+                                {{(formControl.get('userName').hasError('required'))}}
+                            </mat-error>
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width">
+                            <mat-label>First name</mat-label>
+                            <input type="text" matInput formControlName="firstName"
+                                   placeholder="Ex. Aldera Memi">
+                            <mat-error *ngIf="submmited && formControl.get('firstName').hasError('required')">
+                                First name is <strong>required</strong>
+                                {{(formControl.get('firstName').hasError('required'))}}
+                            </mat-error>
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Last Name</mat-label>
+                            <input type="text" matInput formControlName="lastName"
+                                   placeholder="Ex. Ramaga">
+                            <mat-error *ngIf="submmited && formControl.get('lastName').hasError('required')">
+                                >Last Name is <strong>required</strong>
+                                {{(formControl.get('lastName').hasError('required'))}}
+                            </mat-error>
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Email</mat-label>
+                            <input type="email" matInput formControlName="email"
+                                   placeholder="Ex. pat@example.com">
+                            <mat-error *ngIf="submmited && formControl.get('email').hasError('required')">
+                                Email is <strong>required</strong>
+                                {{(formControl.get('email').hasError('required'))}}
+                            </mat-error>
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Choose a date birth</mat-label>
+                            <input matInput [matDatepicker]="picker" formControlName="birthDate" placeholder="DD/MM/YYYY">
+                            <mat-datepicker-toggle matIconSuffix [for]="picker">
+                                <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+                            </mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                            <mat-error *ngIf="submmited && formControl.get('birthDate').hasError('required')">
+                                Date Birth is <strong>required</strong>
+                                {{(formControl.get('birthDate').hasError('required'))}}
+                            </mat-error>
+                            <mat-error *ngIf="formControl.get('birthDate').hasError('futureDate')">Tanggal Lahir tidak boleh di masa depan</mat-error>
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Basic Salary</mat-label>
+                            <input type="number" matInput formControlName="basicSalary"
+                                   placeholder="Ex. 1000000" >
+                            <mat-error *ngIf="submmited && formControl.get('basicSalary').hasError('pattern')">Masukkan angka valid</mat-error>
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Status</mat-label>
+                            <mat-select formControlName="status">
+                                <mat-option value="1">Active</mat-option>
+                                <mat-option value="0">Inactive</mat-option>
+                            </mat-select>
+                            <mat-error *ngIf="submmited && formControl.get('status').hasError('required')">
+                                Status is <strong>required</strong>
+                                {{(formControl.get('status').hasError('required'))}}
+                            </mat-error>
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Group</mat-label>
+                            <input type="text"
+                                   placeholder="Pick one"
+                                   aria-label="Number"
+                                   matInput
+                                   formControlName="group"
+                                   [matAutocomplete]="auto">
+                            <mat-autocomplete #auto="matAutocomplete">
+                                <mat-option *ngFor="let Group of filteredOptions | async" [value]="Group">
+                                    {{Group}}
+                                </mat-option>
+                            </mat-autocomplete>
+                            <mat-error *ngIf="submmited && formControl.get('group').hasError('required')">
+                                Group is <strong>required</strong>
+                                {{(formControl.get('group').hasError('required'))}}
+                            </mat-error>
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Choose a date of description</mat-label>
+                            <input matInput [matDatepicker]="desc" formControlName="description" placeholder="DD/MM/YYYY">
+                            <mat-datepicker-toggle matIconSuffix [for]="desc">
+                                <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+                            </mat-datepicker-toggle>
+                            <mat-datepicker #desc></mat-datepicker>
+                            <mat-error *ngIf="submmited && formControl.get('description').hasError('required')">
+                                Date Description is <strong>required</strong>
+                                {{(formControl.get('description').hasError('required'))}}
+                            </mat-error>
+                            <mat-error *ngIf="formControl.get('description').hasError('futureDate')">Tanggal description tidak boleh di masa depan</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="containerButtonForm">
+                        <button mat-raised-button color="primary" (click)="onSubmit()">Submit</button>
+                    </div>
+                </form>
+            </mat-card-content>
+        </mat-card>
+    </ng-container>
+</app-sidebar>

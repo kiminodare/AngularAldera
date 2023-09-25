@@ -1,0 +1,22 @@
+.containerInputForm {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Dua kolom per baris */
+  grid-gap: 5px; /* Jarak antara elemen-elemen dalam tumpukan */
+}
+
+.containerButtonForm {
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media screen and (max-width: 768px) {
+  .containerInputForm {
+    grid-template-columns: 1fr; /* Hanya satu kolom per baris */
+  }
+
+  .containerButtonForm {
+    margin-top: 10px;
+    justify-content: center; /* Pusatkan tombol */
+  }
+}
